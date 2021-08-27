@@ -1,16 +1,7 @@
 import {Storage} from './storage';
 import {generateId} from './util';
 
-/**
- * Model for the application. It contains the source of truth for the following:
- * - tasks.
- * - tasksDone.
- * - sortBy.
- *
- * The model uses Storage to:
- * - Save its state to persistence when any of the data changes.
- * - It also attempts to load its state from persistence when it is constructed.
- */
+
 class AppData {
   constructor() {
     /** @type{Array<Task>} */
@@ -96,7 +87,6 @@ class Task {
     this.text = text;
     /** @type{boolean} */
     this.done = done;
-     
     /** @type{string} */
     this.priority = priority;
     /** @type{string} */
