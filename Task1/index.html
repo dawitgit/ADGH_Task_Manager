@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ADG Task Manager</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,800|Poppins:700" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <div id="main-content">
+      <div id="tasks-container">
+        <header>
+          <h1 class="heading">ADG Task Manager</h1>
+          <h2 id="date"><p>Today</p>
+            <p id="datetime"><span id="datetime"></span></p> </h2>
+        </header>
+        <div class="card">
+          <div class="card-body bg-transparent border-success">
+        
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="bg-light">
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Task Name-Description</th>
+                <th scope="col" class="center">Assigned To</th>
+                <th scope="col" class="center">Priority</th>
+                <th scope="col" class="center">Due Date</th>
+                <th scope="col"></th>
+              </tr>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col"><div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Task 1 - Description</label>
+                </div></th>
+                <th scope="col" >
+                  <!--
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-secondary dropdown-toggle m-1"
+                      type="button"
+                      id="assigneeDropDown"
+                      data-toggle="dropdown">Select</button>
+                    <div class="dropdown-menu" aria-labelledby="assigneeDropDown">
+                      <a class="dropdown-item" id="addAssigneeDropDown" href="#"
+                        >Jane Doe</a>
+                      <a class="dropdown-item" id="deleteAssigneeDropDown" href="#"
+                        >Bob Marly</a>
+                    </div>
+                    -->
+                  <div>
+                    <input list="assigned-to" type="text">
+                    <datalist id="assigned-to">
+                      <option value="Tom Cruise">
+                      <option value="Tomy Hill">
+                      <option value="Denzel Washington">
+                      <option value="Bob Marly">
+                      <option value="Jane Doe">                
+                    <datalist>
+                    </div>
+                </th>
+                <th scope="col" class="center"><div class="dropdown">
+                  <!--
+                  <button
+                    class="btn btn-secondary dropdown-toggle m-1"
+                    type="button"
+                    id="filterDropDown"
+                    data-toggle="dropdown"
+                  >
+                    Select
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="priorityDropDown">
+                    <a class="dropdown-item" href="#" id="filter-reset">Show all</a>
+                    <a class="dropdown-item" href="#" id="filter-not-started"
+                      >To Do</a
+                    >
+                    <a class="dropdown-item" href="#" id="filter-in-progress"
+                      >In progress</a
+                    >
+                    <a class="dropdown-item" href="#" id="filter-review"
+                      >Review</a
+                    >
+                    <a class="dropdown-item" href="#" id="filter-done">Done</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          -->
+          <div>
+            <input list="priority" type="text">
+            <datalist id="priority">
+              <option value="TODO">
+              <option value="IN PROGRESS">
+              <option value="REVIEW">                    
+            <datalist>
+            </div>
+          </th>
+                <th scope="col" class="center">
+                  <!--
+                  <input type="input" class="form-control" id="datepicker1">
+                  -->
+                  <input type="date">
+                </th>
+                <th scope="col"><button>Delete</button></th>
+              </tr>
+            </thead>
+            <tbody class="accordion" id="taskTableBody"></tbody>
+          </table>
+        </div>
+        <!--    <hr style="height:2px;border-width:0;color:gray;background-color:gray"> -->
+          </div>
+         </div>
+      </div>
+
+      <div id="add-tasks">
+        <form id="form">
+          <input type="text" id="add-task" placeholder="Task Name - Description..." autofocus>
+          <button id="add-button"><img src="images/add.svg" alt="add icon"><span>Add Name & Description</span></button>
+          <button id="add-button-small"><img src="images/add.svg" alt="add icon">
+          </button>
+        </form>
+        <button id="checkbox-button"><img src="images/checkbox-checked.svg">
+        </button>
+      </div>
+    </div>
+
+    <aside id="done-container">
+      <div id="done-tasks-container">
+        <h4 class="heading">Status</h4>
+        <div class="card2" style="width: 18rem;">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+              <label class="custom-control-label" for="customCheck1">Task 1 - Description</label></li>
+            <li class="list-group-item"><input type="checkbox" class="custom-control-input" id="customCheck1" checked> 
+              <label class="custom-control-label" for="customCheck1">Task 2 - Description</label></li>
+            <li class="list-group-item"><input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+              <label class="custom-control-label" for="customCheck1">Task 3 - Description</label></li>
+            <li class="list-group-item"><input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+              <label class="custom-control-label" for="customCheck1">Task 4 - Description</label></li>
+            <li class="list-group-item"><input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+              <label class="custom-control-label" for="customCheck1">Task 5 - Description</label></li>
+          </ul>
+        </div>
+        <button id="checkbox-button"><img src="images/checkbox-checked.svg">
+        </button>
+      </div>
+      
+      
+      <button id="back-to-planner"><i class="material-icons">chevron_left</i><span>Planner
+        </span></button>
+        
+    </aside>
+  </main>
+  <script>
+    var dt = new Date();
+    document.getElementById("datetime").innerHTML = dt.toLocaleString();
+    </script>
+    <!--
+    <script type="text/javascript">
+      $('#datepicker').datepicker({
+          weekStart: 1,
+          daysOfWeekHighlighted: "6,0",
+          autoclose: true,
+          todayHighlight: true,
+      });
+      $('#datepicker1').datepicker("setDate", new Date());
+  </script>
+  <script src="main.js"></script> -->
+</body>
+
+</html>
