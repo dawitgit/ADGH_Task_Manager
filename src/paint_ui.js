@@ -40,7 +40,6 @@ const generateTableWithHeader = () => {
           </th>
           <th class="sorting-cell">
              <select id="sort-by">
-             <option value="assignedTo" ${assignedToSelected}>Assigne-To</option>
                 <option value="Priority" ${prioritySelected}>Priority</option>
                 <option value="Deadline" ${deadlineSelected}>Deadline</option>
              </select>
