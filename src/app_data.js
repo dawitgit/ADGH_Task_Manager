@@ -89,16 +89,14 @@ class Task {
   /**
    * @param {string} text
    * @param {boolean} done
-   * @param {string} assignedTo
    * @param {string} priority
    */
-  constructor(text, done, assignedTo,priority) {
+  constructor(text, done, priority) {
     /** @type{string} */
     this.text = text;
     /** @type{boolean} */
     this.done = done;
-     /** @type{string} */
-     this.assignedTo = assignedTo;
+     
     /** @type{string} */
     this.priority = priority;
     /** @type{string} */
