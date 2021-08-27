@@ -468,8 +468,7 @@
         /** @type{boolean} */
         this.done = done;
         
-        /** @type{string} */
-        this.assingedTo = assingedTo;
+        
         /** @type{string} */
         this.priority = priority;
         /** @type{string} */
@@ -1142,7 +1141,6 @@
               </th>
               <th class="sorting-cell">
                  <select id="sort-by">
-                 <option value="assingedTo" ${assingedToSelected}>Priority</option>
                     <option value="Priority" ${prioritySelected}>Priority</option>
                     <option value="Deadline" ${deadlineSelected}>Deadline</option>
                  </select>
